@@ -4,7 +4,7 @@ import LightHeartbeat from '@/app/assets/json/loading-dark.json'
 import Lottie from 'lottie-react'
 
 interface Props {
-  duration: number,
+  duration?: number,
 }
 
 const Loading = ( {
