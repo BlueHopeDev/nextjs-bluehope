@@ -2,15 +2,67 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  :root {
-    --light: 214, 219, 220;
-    --dark: 44, 47, 56;
+@layer components {
+
+  .menu-container {
+    @apply
+    flex
+    flex-row
+    gap-[5px]
   }
+
+  .menu-item-container {
+    @apply
+    flex
+    flex-col
+    px-[10px]
+    py-[6px]
+    rounded-sm
+    bg-transparent
+    hover:bg-dark-500/5
+    transition-all
+    duration-300
+    ease-in-out
+    before:content-['']
+    before:w-0
+    before:h-[2px]
+    before:bg-black
+    before:transition-width
+    before:duration-300
+    before:ease-in-out
+    hover:before:w-full
+  }
+
+  .modal-background {
+    @apply
+    fixed
+    inset-0
+    bg-dark-500/30
+    backdrop-blur-sm
+  }
+
+  .panel-background {
+    @apply
+    w-full
+    max-w-md
+    transform
+    overflow-hidden
+    rounded-sm
+    bg-light-100/80
+    backdrop-blur-sm
+    text-left
+    align-middle
+    transition-all
+  }
+
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+button:active {
+  outline: none;
 }

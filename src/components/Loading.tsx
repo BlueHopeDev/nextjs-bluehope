@@ -1,6 +1,6 @@
 'use client'
 import React, { useEffect, useState } from 'react'
-import LightHeartbeat from '@/app/assets/json/loading-dark.json'
+import LightHeartbeat from '@/assets/json/loading-dark.json'
 import Lottie from 'lottie-react'
 
 interface Props {
@@ -21,7 +21,7 @@ const Loading = ( {
     if (timerCount > 0) {
       timer = setTimeout(() => {
         setTimerCount((prevCount) => prevCount - 1)
-      }, 1000);
+      }, 1000)
     } else {
       setFadeDown(true)
       setTimeout(() => {
@@ -33,10 +33,10 @@ const Loading = ( {
       if (timer) {
         clearTimeout(timer)
       }
-    };
+    }
   }, [timerCount])
   
-  const containerStyle = `fixed z-[9999] bg-light dark:bg-dark top-0 left-0 right-0 bottom-0 flex justify-center items-center transition-opacity duration-500 ${ fadeDown ? 'opacity-0' : 'opacity-100' } ${ isHideLoader ? 'invisible' : 'visible' }`
+  const containerStyle = `fixed z-[9999] bg-light-500 dark:bg-dark-500 top-0 left-0 right-0 bottom-0 flex justify-center items-center transition-opacity duration-500 ${ fadeDown ? 'opacity-0' : 'opacity-100' } ${ isHideLoader ? 'invisible' : 'visible' }`
 
   return (
     <>

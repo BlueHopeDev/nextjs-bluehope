@@ -1,7 +1,9 @@
 import './globals.css'
-import Loading from './components/Loading'
+import Loading from '../components/Loading'
 import { Ubuntu_Mono } from 'next/font/google'
 import { Metadata } from 'next'
+import Header from '../components/headers/Header'
+import { cn } from '../lib/utils'
 
 const ubuntuMono = Ubuntu_Mono({ weight: '400', subsets: ['latin-ext'] })
 
@@ -20,8 +22,9 @@ export default function RootLayout({
   return (
     <>
       <html lang="en">
-        <body className={ubuntuMono.className}>
+        <body className={cn("bg-light-500 dark:bg-dark-500", ubuntuMono.className)}>
           <Loading duration={3}/>
+          <Header/>
           {children}
         </body>
       </html>
