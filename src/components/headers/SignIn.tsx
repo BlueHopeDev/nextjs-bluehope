@@ -1,13 +1,20 @@
+'use client'
+import { useState } from "react"
 import Button from "../Button"
+import SignInModal from "../modals/SignInModal"
 
 interface SignInProps {}
 
-const SignIn = ({
+const SignUp = ({}: SignInProps) => {
 
-}: SignInProps) => {
+  const [show, setShow] = useState<boolean>(false)
+
   return (
-    <Button styleType="primary">Sign In</Button>
+    <>
+    <Button onClick={() => setShow(true)} styleType="primary">Sign In</Button>
+    <SignInModal isOpen={show} onClose={() => setShow(false)}/>
+    </>
   )
 }
 
-export default SignIn
+export default SignUp

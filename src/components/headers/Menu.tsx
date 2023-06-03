@@ -4,15 +4,15 @@ interface MenuProps {}
 
 const Menu = ({}: MenuProps) => {
   return (
-    <ul className="menu-container float-right mr-[20px]">
+    <ul className="menu-container float-right">
       <li>
         <Link href={"/"} className="menu-item-container group">
           <h6 className="">Home</h6>
         </Link>
       </li>
       <li>
-        <Link href={"/"} className="menu-item-container group">
-          <h6 className="">Blog</h6>
+        <Link href={"/articles"} className="menu-item-container group">
+          <h6 className="">Articles</h6>
         </Link>
       </li>
       <li>

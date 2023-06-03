@@ -5,13 +5,14 @@ import { Metadata } from 'next'
 import Header from '../components/headers/Header'
 import { cn } from '../lib/utils'
 
-const ubuntuMono = Ubuntu_Mono({ weight: '400', subsets: ['latin-ext'] })
+const ubuntuMono = Ubuntu_Mono({ weight: ['400', '700'], style: ['normal', 'italic'], subsets: ['latin-ext'] })
 
 export const metadata: Metadata = {
   title: {
-    template: '%s — BLUEHOPE',
-    default: 'BLUEHOPE'
+    default: 'BLUEHOPE',
+    template: '%s — BLUEHOPE'
   },
+  description: 'BLOG'
 };
 
 export default function RootLayout({
@@ -25,7 +26,11 @@ export default function RootLayout({
         <body className={cn("bg-light-500 dark:bg-dark-500", ubuntuMono.className)}>
           <Loading duration={3}/>
           <Header/>
-          {children}
+          <section className='mt-[64px] flex flex-auto justify-center'>
+            <div className='max-w-screen-xl w-full'>
+              {children}
+            </div>
+          </section>
         </body>
       </html>
     </>
